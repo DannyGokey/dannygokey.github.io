@@ -1,10 +1,1 @@
-{
-  "meta": {
-    "username": "dannygokey",
-    "repositoryName": "dannygokey.github.io",
-    "branch": "master"
-  },
-  "theme": {
-    "name": "Saga"
-  }
-}
+{"meta":{"username":"dannygokey","repositoryName":"dannygokey.github.io","branch":"master"},"site":{"title":"个人博客","description":"看能坚持多久","url":"https://dannygokey.github.io"},"socialnetwork":{},"theme":{"name":"Roon","url":"//dannygokey.github.io/themes/Roon"}}
