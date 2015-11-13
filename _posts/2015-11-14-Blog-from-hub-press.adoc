@@ -1,0 +1,3 @@
+= Blog from hub press
+
+Is this sync with custom domain and github pages?
