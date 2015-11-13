@@ -1,0 +1,41 @@
+= Test again with hosted domain and github pages
+:hp-tags: HubPress,Test
+:published_at: 2015-11-14
+
+=== First Level Headinng
+
+**This is title**
+
+_italic phrase_ +
+__i__talic__letters__
+
+`monospace` +
+Type the word [userinput]#asciidoc# into the search bar. +
+
+
+\*Stars* will appear as *Stars*, not as bold text.
+
+\&sect; will appear as an entity reference, not the &sect; symbol.
+
+\\__func__ will appear as __func__, not as emphasized text.
+
+\{two-semicolons} will appear {two-semicolons}, not resolved as ;;. +
+
+
+.List
+* what
+* how
+* where +
+
+.Order List
+. first item
+. second item
+. third item +
+
+----
+This is an example of a _listing block_.
+The content inside is rendered as <pre> text.
+----
+
+
+
