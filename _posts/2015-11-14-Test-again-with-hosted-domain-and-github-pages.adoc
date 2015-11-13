@@ -32,10 +32,9 @@ Type the word [userinput]#asciidoc# into the search bar. +
 . second item
 . third item +
 
-----
-This is an example of a _listing block_.
-The content inside is rendered as <pre> text.
-----
 
 
 
+    public class People(){
+    
+    }
