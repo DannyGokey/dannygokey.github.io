@@ -1,144 +1,506 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-          body{
-            font-family: "SF Pro Display","-apple-system","BlinkMacSystemFont","San Francisco","Helvetica Neue","Helvetica","Ubuntu","Roboto","Noto","Segoe UI","Arial","PingFang SC" ,"Hiragino Sans GB" ,"Microsoft YaHei" ,"Heiti SC" ,"WenQuanYi Micro Hei",sans-serif;
-            font-size:18px;
-          }
-          p{
-            line-height: 1.756;
-          }
-          /* Override UGG site */
-          #main {width: 100%; padding:0;}
-          .content-asset p {margin:0 auto;}
-          .breadcrumb {display:none;}
 
-          /* Helpers */
-          /**************************/
-          .margin-top-10 {padding-top:10px;}
-          .margin-bot-10 {padding-bottom:10px;}
+<head>
+  <style>
+    body {
+      font-family: "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI", "Arial", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+      font-size: 18px;
+      letter-spacing: .1em;
+    }
 
-          /* Typography */
-          /**************************/
-          #parallax-world-of-ugg h1 {font-size:24px; font-weight:400; text-transform: uppercase; color:black; padding:0; margin:0;}
-          #parallax-world-of-ugg h2 {font-size:70px; letter-spacing:10px; text-align:center; color:rgb(53, 52, 52); font-weight:400; text-transform:uppercase; z-index:10; opacity:.8;}
-          #parallax-world-of-ugg h3 {font-size:14px; line-height:0; font-weight:400; letter-spacing:8px; text-transform: uppercase; color:black;}
-          #parallax-world-of-ugg p { font-weight:400; font-size:18px; }
-          .first-character {font-weight:400; float: left; font-size: 84px; line-height: 64px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Source Sans Pro', sans-serif;}
+    p {
+      line-height: 1.756;
+    }
 
-          .sc {color: #3b8595;}
-          .ny {color: #3d3c3a;}
-          .atw {color: #c48660;}
+    audio {
+      width: 100%;
+    }
+    details {
+      user-select: none;
+      margin-top: 20px;
+      background-color: #26b382;
+      padding: 14px;
+      color: white;
+    }
 
-          /* Section - Title */
-          /**************************/
-          #parallax-world-of-ugg .title {background: white; padding: 60px; margin:0 auto; text-align:center;}
-          #parallax-world-of-ugg .title h1 {font-size:2rem; letter-spacing:8px;}
+    details>summary span.icon {
+      width: 24px;
+      height: 24px;
+      transition: all 0.3s;
+      margin-left: auto;
+    }
 
-          /* Section - Block */
-          /**************************/
-          #parallax-world-of-ugg .block {background: white; padding: 60px; width:820px; margin:0 auto; text-align:justify;}
-          #parallax-world-of-ugg .block-gray {background: #f2f2f2;padding: 60px;}
-          #parallax-world-of-ugg .section-overlay-mask {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: black; opacity: 0.70;}
+    details p {
+      font-size: 0.8rem;
+    }
 
-          /* Section - Parallax */
-          /**************************/
-          #parallax-world-of-ugg .parallax-one {
-            padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; 
-            background-image: url(http://media.nj.com/southjerseyhssports/photo/girls-soccer-roundup-photo-lmn-3200-9037787jpg-a65fde8e9554fd62.jpg); 
-            background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;
-          }
-          #parallax-world-of-ugg .parallax-two {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(http://media.nj.com/southjerseyhssports/photo/girls-soccer-roundup-photo-lmn-3200-9037787jpg-a65fde8e9554fd62.jpg); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
-          #parallax-world-of-ugg .parallax-three {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(http://media.nj.com/southjerseyhssports/photo/girls-soccer-roundup-photo-lmn-3200-9037787jpg-a65fde8e9554fd62.jpg); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
-          #parallax-world-of-ugg .parallax-four {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(http://media.nj.com/southjerseyhssports/photo/girls-soccer-roundup-photo-lmn-3200-9037787jpg-a65fde8e9554fd62.jpg); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;}
+    details[open] summary span.icon {
+      transform: rotate(180deg);
+    }
 
-          #parallax-world-of-ugg .parallax-five {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(http://media.nj.com/southjerseyhssports/photo/girls-soccer-roundup-photo-lmn-3200-9037787jpg-a65fde8e9554fd62.jpg); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;}
+    summary {
+      display: flex;
+      cursor: pointer;
+    }
 
-          #parallax-world-of-ugg .parallax-six {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(http://media.nj.com/southjerseyhssports/photo/girls-soccer-roundup-photo-lmn-3200-9037787jpg-a65fde8e9554fd62.jpg); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;}
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    blockquote {
+      margin-left: -20px;
+      padding-left: 23px;
+      box-shadow: inset 3px 0 0 0 rgb(41, 41, 41);
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    figure {
+      margin-top: 20px;
+    }
+
+    figcaption {
+      color: rgba(117, 117, 117, 1);
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-size: .8rem;
+      line-height: 20px;
+    }
+
+    pre {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      tab-size: 4;
+    }
+
+    pre code {
+      display: block;
+      background: none;
+      white-space: pre;
+      -webkit-overflow-scrolling: touch;
+      max-width: 100%;
+      min-width: 100px;
+      padding: 0;
+    }
+
+    #main {
+      width: 100%;
+      padding: 0;
+    }
+
+    .content-asset p {
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: none;
+    }
+
+    .margin-top-10 {
+      padding-top: 10px;
+    }
+
+    .margin-bot-10 {
+      padding-bottom: 10px;
+    }
+
+    #course-container h1 {
+      font-size: 24px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: black;
+      padding: 0;
+      margin: 0;
+    }
+
+    #course-container h2 {
+      font-size: 70px;
+      letter-spacing: 10px;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      background-color: black;
+      font-weight: 400;
+      text-transform: uppercase;
+      z-index: 10;
+      opacity: .8;
+    }
+
+    #course-container h3 {
+      font-size: 14px;
+      line-height: 0;
+      font-weight: 400;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: black;
+    }
+
+    #course-container p {
+      font-weight: 400;
+      font-size: 18px;
+    }
 
 
-          /* Extras */
-          /**************************/
-          #parallax-world-of-ugg .line-break {border-bottom:1px solid black; width: 150px; margin:0 auto;}
+    #course-container .title {
+      background: white;
+      padding: 60px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-          /* Media Queries */
-          /**************************/
-          @media screen and (max-width: 959px) and (min-width: 768px) {
-            #parallax-world-of-ugg .block {padding: 40px; width:620px;}
-          }
-          @media screen and (max-width: 767px) {
-            #parallax-world-of-ugg .block {padding: 30px; width:420px;}
-            #parallax-world-of-ugg h2 {font-size:30px;}
-            #parallax-world-of-ugg .block {padding: 30px;}
-            #parallax-world-of-ugg .parallax-one, #parallax-world-of-ugg .parallax-two, #parallax-world-of-ugg .parallax-three {padding-top:100px; padding-bottom:100px;}
-          }
-          @media screen and (max-width: 479px) {
-            #parallax-world-of-ugg .block {padding: 30px 15px; width:290px;}
-          }
+    #course-container .title h1 {
+      font-size: 2rem;
+      letter-spacing: 8px;
+    }
 
-          blockquote{
-            margin-left:-20px;
-            padding-left:23px;
-            box-shadow: inset 3px 0 0 0 rgb(41,41,41);
-          }
-          ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-          }
-          li{
-            
-          }
+    #course-container .block {
+      background: white;
+      padding: 60px;
+      width: 820px;
+      margin: 0 auto;
+      text-align: justify;
+    }
 
-        </style>
-    </head>
-    <body>
-        <div id="parallax-world-of-ugg">
-  
-            <section>
-              <div class="title">
-                <h1>01.了解前端基础概念及基本布局的使用</h1>
-                <h3>来自漂泊半年</h3>
-              </div>
-            </section>
-            
-            <section>
-                <div class="parallax-one">
-                  <h2>首先，要了解我们所谓的网页到底是由那几个部分组成</h2>
-                </div>
-            </section>
-            
-            <section>
-              <div class="block">
-                <p>
-                  在日常生活中接触到的网站中能看到的部分是由HTML，Css和Js组成的，也称之为前端页面。
-                </p>
-                <ul>
-                  <li>Html:HTML(HyperText Markup Language)的缩写，它来决定我们网页中的结构。</li>
-                  <li>Css:CSS(Cascading Style Sheets)的缩写,它是决定Html是如何显示的。</li>
-                  <li>Js:Js(Javascript)的缩写,它是网页开发中的核心技术也是一门开发语言。</li>
-                </ul>
-                <p class="margin-top-10">
-                  <blockquote>
-                    <p>
-                      Html是用来描述人体器官的。
-                      <br>
-                      Css是用来确定各器官的位置、形状、大小及颜色的。
-                      <br>
-                      Js是用来决定哪些器官可以有哪些行为动作和可以产生怎样的交互的。
-                    </p>
-                  </blockquote>
-                </p>
-                <audio id="ID004" source src="TestAudio.m4a"></audio>
-              </div>
-            </section>
-            
-            <section>
-              <div class="parallax-two">
-                <h2>ONly 6 women in Illinois Are At A Level To Officiate A High School Soccer State Championship</h2>
-              </div>
-            </section>
-            
-    </body>
+    #course-container .block-gray {
+      background: #f2f2f2;
+      padding: 60px;
+    }
+
+    #course-container .section-overlay-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 0.70;
+    }
+    #course-container .parallax-one {
+      padding-top: 200px;
+      padding-bottom: 200px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-image: url(01.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;
+    }
+
+    #course-container .parallax-two {
+      padding-top: 200px;
+      padding-bottom: 200px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-image: url(02.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    #course-container .parallax-three {
+      padding-top: 200px;
+      padding-bottom: 200px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-image: url(03.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    #course-container .line-break {
+      border-bottom: 1px solid black;
+      width: 150px;
+      margin: 0 auto;
+    }
+
+    .code-editor {
+      height: 400px;
+      margin-top: 20px;
+    }
+
+    .task {
+      background-color: #6895a9;
+      padding: 20px;
+      color: white;
+      line-height: 30px;
+    }
+
+    .knowledge {
+      background-color: #8252c1;
+      padding: 20px;
+      color: white;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    .task small {
+      font-weight: 600;
+    }
+    @media screen and (max-width: 959px) and (min-width: 768px) {
+      #course-container .block {
+        padding: 40px;
+        width: 620px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      #course-container .block {
+        padding: 30px;
+        width: 420px;
+      }
+
+      #course-container h2 {
+        font-size: 30px;
+      }
+
+      #course-container .block {
+        padding: 30px;
+      }
+
+      #course-container .parallax-one,
+      #course-container .parallax-two,
+      #course-container .parallax-three {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+    }
+
+    @media screen and (max-width: 479px) {
+      #course-container .block {
+        padding: 30px 15px;
+        width: 290px;
+      }
+    }
+  </style>
+  <script src="https://flems.io/flems.html" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+  <div id="course-container">
+
+    <section>
+      <div class="title">
+        <h1>01.了解前端基础概念及基本布局的使用</h1>
+        <h3>来自漂泊半年</h3>
+      </div>
+    </section>
+
+    <section>
+      <div class="parallax-one">
+        <h2>首先，要了解我们所谓的网页到底是由那几个部分组成</h2>
+      </div>
+    </section>
+
+    <section>
+      <div class="block">
+        <h1>前言</h1>
+        <p>
+          日常生活中接触到的网站中能看到的部分是由HTML，Css和Js组成的，也称之为前端页面。
+        </p>
+        <ul>
+          <li><span>Html:</span><strong>HTML(HyperText Markup Language)</strong>的缩写，它来决定我们网页中的结构。</li>
+          <li><span>Css:</span><strong>CSS(Cascading Style Sheets)</strong>的缩写,它是决定Html是如何显示的。</li>
+          <li><span>Js:</span><strong>Js(Javascript)</strong>的缩写,它是网页开发中的核心技术也是一门开发语言。</li>
+        </ul>
+        <p>
+        <blockquote>
+          <p>
+            Html是用来描述人体器官的。
+            <br>
+            Css是用来确定各器官的位置、形状、大小及颜色的。
+            <br>
+            Js是用来决定哪些器官可以有哪些行为动作和可以产生怎样的交互的。
+          </p>
+          <audio controls src="first.m4a"></audio>
+        </blockquote>
+        </p>
+        <figure>
+          <img src="/diffrent.jpg" alt="">
+          <figcaption>1. 三者的不同</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="parallax-two">
+        <h2>让我们了解一下Html和Css的具体语法</h2>
+      </div>
+    </section>
+    <section>
+      <div class="block">
+        <h1>基础语法</h1>
+        <p>Html中大部分标签都是用<code>&lt;标签名&gt;&lt;&#47;标签名&gt;</code>的形式来表达。</p>
+        <pre><code>&lt;html&gt;&lt;&#47;html&gt;  &lt;div&gt;&lt;&#47;div&gt;  &lt;p&gt;&lt;&#47;p&gt;</code></pre>
+
+        <p><strong>接下来了解一下标签中的id与class属性:</strong> </p>
+
+        <p>上面说过Html中的标签是用来描述结构的，上方手绘的人脸上我们可以看到有一双眼睛。当我和你说把眼睛闭上的时候，你就应该把双眼都闭上。当我说左眼闭上的时候，你只能闭左眼。
+          <strong>也就是说眼睛是一个泛成，而左眼、右眼是有具体的指向性的。同时左眼在身体范围内只有唯一的一个，你可以没有但你不能有两个左眼。</strong>
+        <pre><code>&lt;eye id="左眼" class="眼睛"&gt;&lt;&#47;eye&gt;   &lt;eye id="右眼" class="眼睛"&gt;&lt;&#47;eye&gt;</code></pre>
+        </p>
+        <p>Css的语法，今天先介绍一部分哈。</p>
+        <p>我们说过Css是描述结构的样式的，简单点可以理解为化妆。它可以为<code>&lt;眼睛&gt;</code>、<code>id=“左眼”</code>和<code>class=“眼睛”</code>等添加不同的样式。
+        </p>
+        <pre><code>//下面是描述&lt;eye&gt;&lt;&#47;eye&gt;的样式
+eye:{ 
+color: black;
+width: 20px;
+heigth:30px;
+}
+//以#+id的形式描述具体某一个标签&lt;eye id="左眼"&gt;&lt;&#47;eye&gt;的样式
+#左眼{
+  color:yellow;
+}
+//以.+class名的形式描述具体某一类标签&lt;eye class="眼睛"&gt;&lt;&#47;eye&gt;的样式
+.眼睛{
+  color:red;
+}</code></pre>
+        <p>下面是H<strong>tml、Css和Js在我们的文档中要写入的位置。</strong></p>
+        <figure>
+          <img src="/code-structure.png" alt="">
+          <figcaption>1. 三者的不同</figcaption>
+        </figure>
+        <blockquote>
+          <p>
+            我相信看到这里应该会很迷茫，因为我自己也觉得写的好烂.. <br>
+            下面准备了几个例子，再坚持一下。<br>
+            做完例子还是觉得不行，那就是我太次了。
+
+          </p>
+        </blockquote>
+      </div>
+    </section>
+    <section>
+      <div class="parallax-three">
+        <h2>基础练习</h2>
+      </div>
+    </section>
+    <section>
+      <div class="block">
+        <h1>标准Html文档结构</h1>
+        <p>标准的Html文件，大体上由<code>html</code>，<code>head</code>，<code>body</code>几个标签组成:</p>
+        <div id="html-structure" class="code-editor"></div>
+
+        <p>接下来我们学习一个基础的排版标签以及若干个Css属性，下面我们有两个div标签，具有相同的class名为cdiv，然后各自都有一个唯一的id。</p>
+        <div class="task">
+          <span>任务<small>(tips:背景颜色的属性名叫background-color,红色和黄色直接用英文表达就可以)</small>:
+            <br>
+            1. 将id为div1的背景颜色设置为红色;
+            <br>
+            2. 将id为div2的宽度和高度设置为150px;
+            <br>
+            3. 将class为cdiv的标签的背景颜色设置为黄色;
+          </span>
+        </div>
+        <details>
+          <summary>
+            没弄出来再点我哈，别直接看答案！
+            <span class="icon">👇</span>
+          </summary>
+          <p>
+            呵呵，你以为答案是给你一个能直接复制粘贴的吗？！
+            <br>
+            <code>background-color:red;</code>
+          </p>
+        </details>
+        <div id="div-basic" class="code-editor"></div>
+
+        <p>下面直接拔高一个难度，来个进阶的内容。了解下最基本的Flex布局：</p>
+        <blockquote>
+          <p>
+            先做一个上下布局的两个<code>div</code>，上面的<code>div</code>当做菜单栏，下面的<code>div</code>当做内容区域。
+          </p>
+        </blockquote>
+        <div class="knowledge">
+          <span>说明:
+            <br>
+            1. 在id为container的div里面有id为header和id为content的共3个div标签.
+            <br>
+            2. 用css来描述#container的宽度360px，最小高度300px，文字的颜色为白色。
+            <br>
+            3. text-align:center;指的是div内部的文字全部居中。
+            <br>
+            4. border:3px solid black;指的是div的边框为3px宽且是实线且颜色是黑色。
+            <br>
+            5. display:flex;指的是用弹性伸缩布局，暂时死记硬背吧。
+            <br>
+            6. flex-direction:默认值是row也就是横向分布，这里设置为column纵向分布。
+            <br>
+            7. 我们没有给#header和#content的div设置高度，但里面各有一个p标签。
+            <br>
+            8. 所以div的高度=p标签的默认高度，如果没有p标签则div的高度为0。
+            <br>
+            9. #content的css中flex:1;的意思是填充剩余所有区域。
+          </span>
+        </div>
+        <div class="task">
+          <span>任务:
+            <br>
+            1. 将#container的css属性flex-direction设置为row,观察页面的变化。
+            <br>
+            2. 去掉#content的css属性flex:1,观察页面的变化。
+            <br>
+            3. 尝试多用几个div实现下图的内容。
+            <br>
+            <figure>
+              <img src="/test.png" alt="">
+              <figcaption>尝试下</figcaption>
+            </figure>
+          </span>
+        </div>
+        <div id="flex-basic" class="code-editor"></div>
+        <h1>后面的慢慢弄，感觉还是得有视频跟上才好。</h1>
+      </div>
+    </section>
+    <script>
+      const demo1 = Flems(document.getElementById('html-structure'), {
+        files: [{
+          name: 'helloworld.html',
+          content: '<html>\n <head>\n \n </head>\n <dody> \n   <p>Hello，World！！</p> \n </dody>\n </html>'
+        }],
+        shareButton: false,
+        console: false
+      });
+      const demo2 = Flems(document.getElementById('div-basic'), {
+        files: [{
+          name: '编辑区域.html',
+          content: '<html>\n <head>\n <style> \n #div1{ \n border: 1px solid black;//用分号结尾\n width:100px;\n height:100px; \n} \n </style> \n </head>\n <dody> \n   <div id="div1" class="cdiv"></div> \n   <div id="div2" class="cdiv"></div> \n </dody>\n </html>'
+        }],
+        shareButton: false,
+        console: false
+      });
+      const demo3 = Flems(document.getElementById('flex-basic'), {
+        files: [{
+          name: '编辑区域.html',
+          content: '<html>\n <head>\n <style> \n #container{\n  width:360px;\n  min-height:300px;\n  color:white;\n  text-align:center;\n  border: 3px solid black;\n  display:flex; \n  flex-direction:column;\n}\n #header{\n  background-color:#eb6c82;\n  border-bottom: 3px solid black;\n}\n #content{\n  background-color:#3a3abf;\n  flex:1;\n} \n </style> \n </head>\n <dody> \n <div id="container">\n  <div id="header"><p>我来组成头部!</p></div>\n  <div id="content"><p>我来组成身体!</p></div>\n</div> \n </dody>\n </html>'
+        }],
+        shareButton: false,
+        console: false
+      });
+    </script>
+</body>
+
 </html>
