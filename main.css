@@ -1,0 +1,337 @@
+body {
+    font-family: "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI", "Arial", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 18px;
+    letter-spacing: .1em;
+  }
+
+  p {
+    line-height: 1.756;
+  }
+
+  audio {
+    width: 100%;
+  }
+  details {
+    user-select: none;
+    margin-top: 20px;
+    background-color: #26b382;
+    padding: 14px;
+    color: white;
+  }
+
+  details>summary span.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+    margin-left: auto;
+  }
+
+  details p {
+    font-size: 0.8rem;
+  }
+
+  details[open] summary span.icon {
+    transform: rotate(180deg);
+  }
+
+  summary {
+    display: flex;
+    cursor: pointer;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  blockquote {
+    margin-left: -20px;
+    padding-left: 23px;
+    box-shadow: inset 3px 0 0 0 rgb(41, 41, 41);
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  figure {
+    margin-top: 20px;
+  }
+
+  figcaption {
+    color: rgba(117, 117, 117, 1);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: .8rem;
+    line-height: 20px;
+  }
+
+  pre {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    tab-size: 4;
+  }
+
+  pre code {
+    display: block;
+    background: none;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    min-width: 100px;
+    padding: 0;
+  }
+
+  #main {
+    width: 100%;
+    padding: 0;
+  }
+
+  .content-asset p {
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  .margin-top-10 {
+    padding-top: 10px;
+  }
+
+  .margin-bot-10 {
+    padding-bottom: 10px;
+  }
+
+  #course-container h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+    padding: 0;
+    margin: 0;
+  }
+
+  #course-container h2 {
+    font-size: 70px;
+    letter-spacing: 10px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    font-weight: 400;
+    text-transform: uppercase;
+    z-index: 10;
+    opacity: .8;
+  }
+
+  #course-container h3 {
+    font-size: 14px;
+    line-height: 0;
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  #course-container p {
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+
+  #course-container .title {
+    background: white;
+    padding: 60px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #course-container .title h1 {
+    font-size: 2rem;
+    letter-spacing: 8px;
+  }
+
+  #course-container .block {
+    background: white;
+    padding: 60px;
+    width: 820px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
+  #course-container .block-gray {
+    background: #f2f2f2;
+    padding: 60px;
+  }
+
+  #course-container .section-overlay-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.70;
+  }
+  #course-container .parallax-one {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(https://weblessons.oss-cn-shanghai.aliyuncs.com/01.png);
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  #course-container .parallax-two {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(https://weblessons.oss-cn-shanghai.aliyuncs.com/02.png);
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  #course-container .parallax-three {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(https://weblessons.oss-cn-shanghai.aliyuncs.com/03.png);
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  #course-container .parallax-four {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(https://weblessons.oss-cn-shanghai.aliyuncs.com/04.png);
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  #course-container .line-break {
+    border-bottom: 1px solid black;
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  .code-editor {
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom:20px;
+  }
+    .full-width{
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+  .task {
+    background-color: #6895a9;
+    padding: 20px;
+    color: white;
+    line-height: 30px;
+  }
+
+  .knowledge {
+    background-color: #8252c1;
+    padding: 20px;
+    color: white;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+
+  .task small {
+    font-weight: 600;
+  }
+  .text-w{
+    color:white;
+  }
+  .highlight-link{
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: #EC407A;
+    margin-top:10px;
+  }
+  .highlight-link::after {
+    content: "";
+    background: rgba(236, 64, 122, 0.25);
+    position: absolute;
+    left: 12px;
+    bottom: -6px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    transition: 0.35s cubic-bezier(0.25, 0.1, 0, 2.05);
+  }
+  .highlight-link:hover:after {
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 100%;
+  }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    #course-container .block {
+      padding: 40px;
+      width: 620px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    #course-container .block {
+      padding: 30px;
+      width: 420px;
+    }
+
+    #course-container h2 {
+      font-size: 30px;
+    }
+
+    #course-container .block {
+      padding: 30px;
+    }
+
+    #course-container .parallax-one,
+    #course-container .parallax-two,
+    #course-container .parallax-three {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    #course-container .block {
+      padding: 30px 15px;
+      width: 290px;
+    }
+  }
