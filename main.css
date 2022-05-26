@@ -237,6 +237,20 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
   }
+  #course-container .parallax-five {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(https://weblessons.oss-cn-shanghai.aliyuncs.com/01.png);
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
   #course-container .line-break {
     border-bottom: 1px solid black;
     width: 150px;
@@ -262,7 +276,15 @@ body {
     color: white;
     line-height: 30px;
   }
-
+  .tips{
+    background-color: #2ba3a3;
+    padding: 20px;
+    color: white;
+    line-height: 26px;
+  }
+  .tips code{
+    background-color: #f7b767;
+  }
   .knowledge {
     background-color: #8252c1;
     padding: 20px;

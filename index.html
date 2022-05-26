@@ -13,7 +13,8 @@
       <div class="title">
         <h1>01.了解前端基础概念及基本布局的使用</h1>
         <h3>来自漂泊半年</h3>
-        <a class="highlight-link" href="#second-update">最新更新:Flex基础知识</a>
+        <a class="highlight-link" href="#third-update">最新更新：盒子模型及实操案例(部分)</a><br><br>
+        <a class="highlight-link" href="#second-update">Flex基础知识</a>
       </div>
     </section>
 
@@ -43,11 +44,11 @@
             <br>
             Js是用来决定哪些器官可以有哪些行为动作和可以产生怎样的交互的。
           </p>
-          <!-- <audio controls src="https://weblessons.oss-cn-shanghai.aliyuncs.com/first.m4a"></audio> -->
+          <audio controls src="https://weblessons.oss-cn-shanghai.aliyuncs.com/first.m4a"></audio>
         </blockquote>
         </p>
         <figure>
-          <!-- <img src="https://weblessons.oss-cn-shanghai.aliyuncs.com/diffrent.jpg" alt=""> -->
+          <img src="https://weblessons.oss-cn-shanghai.aliyuncs.com/diffrent.jpg" alt="">
           <figcaption>1. 三者的不同</figcaption>
         </figure>
 
@@ -90,8 +91,8 @@ heigth:30px;
 }</code></pre>
         <p>下面是H<strong>tml、Css和Js在我们的文档中要写入的位置。</strong></p>
         <figure>
-          <!-- <img src="https://weblessons.oss-cn-shanghai.aliyuncs.com/code-structure.png" alt=""> -->
-          <figcaption>1. 三者的不同</figcaption>
+          <img src="https://weblessons.oss-cn-shanghai.aliyuncs.com/code-structure.png" alt="">
+          <figcaption>2. 代码结构</figcaption>
         </figure>
         <blockquote>
           <p>
@@ -308,8 +309,77 @@ heigth:30px;
               </div>
               <div id="align-self" class="code-editor full-width"></div>
             </div>
-            <h1>It's time to say goodbye，see you next update。</h1>
         </div>
+      </section>
+      <section id="third-update">
+        <div class="parallax-five">
+          <h2>盒子模型</h2>
+        </div>
+      </section>
+      <section>
+        <div class="block">
+          <h1>1. 基本概念</h1>
+            <p>了解盒子模型，对于我们排班和布局是很重要的。盒子模型是由宽度、高度、内边距、外边距和边框构成，对应的Css属性为
+              width、height、padding、margin和border。
+            </p>
+            <figure>
+              <img src="https://weblessons.oss-cn-shanghai.aliyuncs.com/box-model.jpg" alt=""> 
+              <figcaption>盒子模型说明</figcaption>
+            </figure>
+            <p><strong>下方例子中的文字的上下左右内边距为20px，左右的外边距为10px，边框为1px宽的黑色实线。
+              可以自行修改<code>margin-*</code>与<code>padding-*</code> 属性观察变化。
+            </strong></p>
+            <div class="tips">
+              例子中可以看到有一个<code>.container p{...}</code>的写法，这里的含义是class为container内部的所有p元素。
+              同理，我们也可以写<code>body div p{...}</code>或<code>#id .class tag .class{...}</code>这种复杂的选择器。
+            </div>
+            <div id="box-model" class="code-editor full-width"></div>
+            <p>进入我们的实操案例前，简单学习一下文字相关的两个标签，<code>p</code>和<code>span</code>。
+              <code>p</code>标签包含的文字会新起一行或者说是一块，它属于块级元素。而<code>span</code>标签属于行内元素，不会换行。
+            </p>
+            <div class="tips">
+              <code>p</code>标签下的文字为蓝色，<code>span</code>标签下的文字为黑色。仔细观察并了解行内元素和块级元素的区别。
+            </div>
+            <div id="p-span" class="code-editor full-width"></div>
+            <h1>第一个布局实战案例，某乎。</h1>
+            <p>来模拟某知识分享平台网站的首页布局，利用上面学到的知识及一些<strong>新增加的css知识点</strong>，
+              来完成整体页面的粗略布局。使用的元素有<code>div,span,p</code>以及flex布局。
+            </p>
+            <figure>
+              <img src="https://weblessons.oss-cn-shanghai.aliyuncs.com/zhihu.jpg" alt=""> 
+              <figcaption>某乎布局</figcaption>
+            </figure>
+            <p>
+              1: 从结构上，我们先用<code>.container</code>包起左右内容。内部由.header.main组成，它俩是<code>flex-direction:column</code>布局的。
+              <br>2: .main中又分为.content和.side-bar两个左右的区域，它俩是<code>flex-direction:row</code>布局的。之后我们给.menu、.content指定高度
+              来模拟页面。
+              
+              <br>3: 因为.content区域要比.side-bar区域大，所以.main的<code>justify-item:space-around;</code>同时给
+              .content设置<code>flex-grow:2</code>,
+              来保证剩余空间优先分配给.content。
+              <br>4: 最后利用盒子模型中的margin与padding给区域创造内外边距。
+            </p>
+            <div class="tips">
+              这部分一定要理解后，再去看菜单部分的代码。否则只能是照葫芦画瓢，虽然没啥问题。
+            </div>
+            <div id="mouhu" class="code-editor full-width"></div>
+            <p>
+              菜单栏看着虽然是一条，但是划分区域的话可以分为菜单区域、查询区域和图标区域。
+              每个区域都用一个div包起，并设置<code>display:flex;</code>。<br>
+              然后利用flex的相关属性来控制间距，同时给各个区域设置<code>min-width</code>来控制最小宽度。
+            </p>
+            <div class="tips">
+              <code>input</code>标签是输入类标签，当它的type属性等于text的时候就是我们常见的文本框。<br>
+              <code>button</code>就是我们一般常见的按钮了。<br>
+              具体的内容将会在Form表单章节里单独介绍，<strong>可以试一试给button上一些颜色，来贴近我们的案例。</strong>
+              <br>background-color设置背景颜色，color设置字体颜色。
+            </div>
+            <div id="mouhu-menu" class="code-editor full-width"></div>
+            <!-- <div id="mouhu-content" class="code-editor full-width"></div>
+            <div id="mouhu-sidebar" class="code-editor full-width"></div> -->
+            <h1>To be continue...</h1>
+        </div>
+        
       </section>
     </section>
     <script>
@@ -410,6 +480,38 @@ heigth:30px;
         },{
           name:'style.css',
           content:'#container{\n border:3px solid black; \n width:300px;\n height:200px; \n display:flex;\n align-items:stretch;\n}\n.item{\n width:50px;\n color:white;\n font-weight:600;\n text-align:center\n}\n#item-1{\n align-self:flex-end;\n height:40px; \n background-color:#ef7e6e;}\n#item-2{height:60px; \n background-color:#d894eb;}\n#item-3{\n align-self: center; \n height:80px; \n background-color:#9db4de}\n#item-4{height:100px; \n background-color:#9dcdde}\n#item-5{height:120px; \n background-color:#d98e53}'
+        }],
+        shareButton: false,
+        console: false
+      });
+      const boxmodel = Flems(document.getElementById('box-model'), {
+        files: [{
+          name: '编辑区域.html',
+          content: '<html>\n <head>\n <style>\n *{margin:0;padding:0}\n .container{border:1px solid black;}\n .container p{\n  padding-top:20px;\n  padding-bottom:20px;\n  padding-left:20px;\n  padding-right:20px;\n  margin-left:20px;\n  margin-right:20px;\n  margin-top:0px;\n  margin-bottom:0px;\n  border:1px solid red; \n}\n</style> \n </head>\n <dody> \n   <div class="container">\n  <p>Hello，World！！</p> \n</div>\n </dody>\n </html>'
+        }],
+        shareButton: false,
+        console: false
+      });
+      const pspan = Flems(document.getElementById('p-span'), {
+        files: [{
+          name: '编辑区域.html',
+          content: '<html>\n <head>\n<style>\n p{ color:blue;}\n span{color:black;}\n</style> \n </head>\n <dody> \n   <p>我是单独的p标签</p> \n  <p>我是P标签<span>中的span</span></p>\n  <span>我是span里的<p>我是中间插进来的p</p>我和上面是同一个span里的。</span> </dody>\n </html>'
+        }],
+        shareButton: false,
+        console: false
+      });
+      const mouhu = Flems(document.getElementById('mouhu'), {
+        files: [{
+          name: '编辑区域.html',
+          content: '<html>\n <head>\n<style>\n.container{\n display:flex;\n background-color:#dcdcdc;\n flex-direction:column;\n}\n.header{\n background-color:white;\n height:40px;\n}\n.main{\n display:flex;\n justify-content:space-around;\n padding-left:20px;\n padding-right:20px;\n margin-top:10px;\n }\n.content{\n height:300px;\n background-color:white;\n flex-grow:2;\n margin-right:10px;\n }\n.side-bar{\n background-color:white;\n}   \n</style> \n </head>\n <dody> \n  <div class="container">\n   <div class="header">菜单</div>\n   <div class="main">\n     <div class="content">主内容</div>\n     <div class="side-bar">边栏多放些文字模拟下宽度</div>\n   </div>\n  </div>  \n </dody>\n </html>'
+        }],
+        shareButton: false,
+        console: false
+      });
+      const mouhumenu = Flems(document.getElementById('mouhu-menu'), {
+        files: [{
+          name: '编辑区域.html',
+          content: '<html>\n <head>\n<style>\n.container{\n display:flex;\n background-color:#dcdcdc;\n flex-direction:column;\n}\n.header{\n background-color:white;\n height:40px;\n display:flex;\n justify-content:space-between;\n align-items:center;\n padding-left:20px;\n padding-right:20px;\n}\n.menu{\n display:flex;\n justify-content:space-around;\n  min-width:240px;}\n.search{\n display:flex;\njustify-content:space-around;\n height:26px;\n min-width:200px;\n}\n.icon{\ndisplay:flex;\n justify-content:space-around;\n min-width:80px;  \n}\n.main{\n display:flex;\n justify-content:space-around;\n padding-left:20px;\n padding-right:20px;\n margin-top:10px;\n }\n.content{\n height:300px;\n background-color:white;\n flex-grow:2;\n margin-right:10px;\n }\n.side-bar{\n background-color:white;\n}   \n</style> \n </head>\n <dody> \n  <div class="container">\n   <div class="header">\n    <div class="menu">\n     <span>首页</span>\n     <span>发现</span>\n     <span>会员</span>\n     <span>等你来答</span>\n    </div>\n    <div class="search">\n     <input type="text" placeholder="查点什么吧">\n     <button>查询</button>\n    </div>\n    <div class="icon">\n     <span>通知</span>\n     <span>消息</span>\n    </div>\n</div>\n   <div class="main">\n     <div class="content">主内容</div>\n     <div class="side-bar">边栏多放些文字模拟下宽度</div>\n   </div>\n  </div>  \n </dody>\n </html>'
         }],
         shareButton: false,
         console: false
