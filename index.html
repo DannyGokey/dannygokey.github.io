@@ -13,7 +13,8 @@
       <div class="title">
         <h1>01.了解前端基础概念及基本布局的使用</h1>
         <h3>来自漂泊半年</h3>
-        <a class="highlight-link" href="#third-update">最新更新：盒子模型及实操案例(部分)</a><br><br>
+        <a class="highlight-link" href="#left-content">最新更新：盒子模型及实操案例(结构部分完成)</a><br><br>
+        <a class="highlight-link" href="#third-update">盒子模型及实操案例(部分)</a><br><br>
         <a class="highlight-link" href="#second-update">Flex基础知识</a>
       </div>
     </section>
@@ -375,6 +376,27 @@ heigth:30px;
               <br>background-color设置背景颜色，color设置字体颜色。
             </div>
             <div id="mouhu-menu" class="code-editor full-width"></div>
+            <p id="left-content">
+              接下来我们看一下侧边栏，侧边栏共有四个部分组成。第一行的创作中心，内部是一左一右的布局。第二行是关于内容创作的按钮，横向布局。
+              第三行是热点，上下布局。第四行是其他入口的按钮，横向两排布局。看到这种界面时应该大体上可以构想出是由几层div组成才对。
+            </p>
+            <div class="tips">
+              在第四行布局的时候使用了<code>flex-wrap</code> 属性。目的是为了换行，请往上翻阅相关内容。<br>
+              所以给第四个div了一个固定的宽度，实际场景中并不会如此使用。这里只是一种简单的完成项目的方式。
+            </div>
+            <div id="mouhu-sidebar" class="code-editor full-width"></div>
+            <p>
+              最后我们来看一下主内容区域，首先我们分析下嘴上上的关注、推荐、热榜和视频这部分。
+              可以使用<code>justify-content:flex-start;</code>来布局。
+              然后下方的标题与正文我们可以使用上下的flex布局。
+              之后赞同那一行同样使用flex-start。<br>
+              最后，可以发现我们的内容和左右边缘的边距是一样的。可以使用外部容器的<code>padding</code>,也可以使用内部容器的<code>margin</code>属性来实现。
+            </p>
+            <div class="tips">
+              css代码中<code>.answers p:first-child</code>这个写法上面没有讲过，后续如果有css的入门课程的时候会讲。<br>
+              这种写法属于伪元素选择器，含义是class为answers内部的第一个p标签。
+            </div>
+            <div id="mouhu-content" class="code-editor full-width"></div>
             <!-- <div id="mouhu-content" class="code-editor full-width"></div>
             <div id="mouhu-sidebar" class="code-editor full-width"></div> -->
             <h1>To be continue...</h1>
@@ -512,6 +534,28 @@ heigth:30px;
         files: [{
           name: '编辑区域.html',
           content: '<html>\n <head>\n<style>\n.container{\n display:flex;\n background-color:#dcdcdc;\n flex-direction:column;\n}\n.header{\n background-color:white;\n height:40px;\n display:flex;\n justify-content:space-between;\n align-items:center;\n padding-left:20px;\n padding-right:20px;\n}\n.menu{\n display:flex;\n justify-content:space-around;\n  min-width:240px;}\n.search{\n display:flex;\njustify-content:space-around;\n height:26px;\n min-width:200px;\n}\n.icon{\ndisplay:flex;\n justify-content:space-around;\n min-width:80px;  \n}\n.main{\n display:flex;\n justify-content:space-around;\n padding-left:20px;\n padding-right:20px;\n margin-top:10px;\n }\n.content{\n height:300px;\n background-color:white;\n flex-grow:2;\n margin-right:10px;\n }\n.side-bar{\n background-color:white;\n}   \n</style> \n </head>\n <dody> \n  <div class="container">\n   <div class="header">\n    <div class="menu">\n     <span>首页</span>\n     <span>发现</span>\n     <span>会员</span>\n     <span>等你来答</span>\n    </div>\n    <div class="search">\n     <input type="text" placeholder="查点什么吧">\n     <button>查询</button>\n    </div>\n    <div class="icon">\n     <span>通知</span>\n     <span>消息</span>\n    </div>\n</div>\n   <div class="main">\n     <div class="content">主内容</div>\n     <div class="side-bar">边栏多放些文字模拟下宽度</div>\n   </div>\n  </div>  \n </dody>\n </html>'
+        }],
+        shareButton: false,
+        console: false
+      });
+      const mouhusidebar = Flems(document.getElementById('mouhu-sidebar'), {
+        files: [{
+          name: '编辑区域.html',
+          content: '<html>\n <head>\n </head>\n <dody> \n  <div class="container">\n   <div class="header">\n    <div class="menu">\n     <span>首页</span>\n     <span>发现</span>\n     <span>会员</span>\n     <span>等你来答</span>\n    </div>\n    <div class="search">\n     <input type="text" placeholder="查点什么吧">\n     <button>查询</button>\n    </div>\n    <div class="icon">\n     <span>通知</span>\n     <span>消息</span>\n    </div>\n</div>\n   <div class="main">\n     <div class="content">\n        主内容\n      </div>\n     <div class="side-bar">\n      <div class="side-1">\n       <span>创作中心</span><span>草稿箱</span>\n      </div>\n      <div class="side-2">\n       <span>回答问题</span><span>发视频</span><span>写文章</span><span>写想法</span>\n      </div>\n      <div class="side-3">\n       <p>这是一个热点哦</p><button>进入创作中心></button>\n      </div>\n      <div class="side-4">\n       <span>Live</span><span>书店</span><span>圆桌</span>\n       <span>专栏</span><span>付费咨询</span><span>百科</span>\n      </div>\n     </div>\n   </div>\n  </div>  \n </dody>\n </html>'
+        },{
+          name:'style.css',
+          content:'.container{\n display:flex;\n background-color:#dcdcdc;\n flex-direction:column;\n}\n.header{\n background-color:white;\n height:40px;\n display:flex;\n justify-content:space-between;\n align-items:center;\n padding-left:20px;\n padding-right:20px;\n}\n.menu{\n display:flex;\n justify-content:space-around;\n  min-width:240px;}\n.search{\n display:flex;\njustify-content:space-around;\n height:26px;\n min-width:200px;\n}\n.icon{\ndisplay:flex;\n justify-content:space-around;\n min-width:80px;  \n}\n.main{\n display:flex;\n justify-content:space-around;\n padding-left:20px;\n padding-right:20px;\n margin-top:10px;\n }\n.content{\n height:300px;\n background-color:white;\n flex-grow:2;\n margin-right:10px;\n }\n.side-bar{\n background-color:white;\n min-width:300px;\n}\n.side-1{\n display:flex;\n justify-content:space-between;\n padding-left:10px;\n padding-right:10px;\n height:50px;\n align-items:center;\n background-color: #c6a8e9;\n}\n.side-2{display:flex;\n justify-content:space-around;\n height:65px;\n align-items:center;\n background-color: #a8b1e9;\n}\n.side-3{\n display:flex;\n flex-direction:column;\n height:80px;\n background-color:#a8e4e9;\n align-items:center;\n}\n.side-4{\n display:flex;\n height:80px;\n background-color:#e9d1a8;\n align-items:center;\n flex-wrap:wrap;\n justify-content:center;\n width:300px;\n}\n.side-4 span{\n width:100px;\n text-align:center;\n}'
+        }],
+        shareButton: false,
+        console: false
+      });
+      const mouhucontent = Flems(document.getElementById('mouhu-content'), {
+        files: [{
+          name: '编辑区域.html',
+          content: '<html>\n <head>\n </head>\n <dody> \n  <div class="container">\n   <div class="header">\n    <div class="menu">\n     <span>首页</span>\n     <span>发现</span>\n     <span>会员</span>\n     <span>等你来答</span>\n    </div>\n    <div class="search">\n     <input type="text" placeholder="查点什么吧">\n     <button>查询</button>\n    </div>\n    <div class="icon">\n     <span>通知</span>\n     <span>消息</span>\n    </div>\n</div>\n   <div class="main">\n     <div class="content">\n      <div class="tags">\n       <span>关注</span><span>推荐</span><span>热榜</span><span>视频</span>\n      </div>\n      <div class="answers">\n       <p>标题</p><p>这里是一堆正文内容</p>\n      </div>\n      <div class="actions">\n       <span>赞同</span><span>评论</span><span>分享</span>\n       <span>收藏</span><span>喜欢</span>\n      </div>\n      <div class="answers">\n       <p>标题</p><p>这里是一堆正文内容</p>\n      </div>\n      <div class="actions">\n       <span>赞同</span><span>评论</span><span>分享</span>\n       <span>收藏</span><span>喜欢</span>\n      </div>\n    </div>\n     <div class="side-bar">\n      <div class="side-1">\n       <span>创作中心</span><span>草稿箱</span>\n      </div>\n      <div class="side-2">\n       <span>回答问题</span><span>发视频</span><span>写文章</span><span>写想法</span>\n      </div>\n      <div class="side-3">\n       <p>这是一个热点哦</p><button>进入创作中心></button>\n      </div>\n      <div class="side-4">\n       <span>Live</span><span>书店</span><span>圆桌</span>\n       <span>专栏</span><span>付费咨询</span><span>百科</span>\n      </div>\n     </div>\n   </div>\n  </div>  \n </dody>\n </html>'
+        },{
+          name:'style.css',
+          content:'.container{\n display:flex;\n background-color:#dcdcdc;\n flex-direction:column;\n}\n.header{\n background-color:white;\n height:40px;\n display:flex;\n justify-content:space-between;\n align-items:center;\n padding-left:20px;\n padding-right:20px;\n}\n.menu{\n display:flex;\n justify-content:space-around;\n  min-width:240px;}\n.search{\n display:flex;\njustify-content:space-around;\n height:26px;\n min-width:200px;\n}\n.icon{\ndisplay:flex;\n justify-content:space-around;\n min-width:80px;  \n}\n.main{\n display:flex;\n justify-content:space-around;\n padding-left:20px;\n padding-right:20px;\n margin-top:10px;\n }\n.content{\n height:300px;\n background-color:white;\n flex-grow:2;\n margin-right:10px;\n padding-left:14px;\n padding-right:14px;\n }\n.side-bar{\n background-color:white;\n min-width:300px;\n}\n.side-1{\n display:flex;\n justify-content:space-between;\n padding-left:10px;\n padding-right:10px;\n height:50px;\n align-items:center;\n background-color: #c6a8e9;\n}\n.side-2{display:flex;\n justify-content:space-around;\n height:65px;\n align-items:center;\n background-color: #a8b1e9;\n}\n.side-3{\n display:flex;\n flex-direction:column;\n height:80px;\n background-color:#a8e4e9;\n align-items:center;\n}\n.side-4{\n display:flex;\n height:80px;\n background-color:#e9d1a8;\n align-items:center;\n flex-wrap:wrap;\n justify-content:center;\n width:300px;\n}\n.side-4 span{\n width:100px;\n text-align:center;\n}\n.tags{\n display:flex;\n justify-content:flex-start;\n height:50px;\n background-color:#c6a8e9;\n align-items:center;\n}\n.tags span{\n margin-right:4px;\n}\n.answers{\n display:flex;\n flex-direction:column;\ align-items:start;\n background-color:#a8b1e9;\n height:65px;\n}\n.answers p{margin-top:0;margin-bottom:4px;\n}\n.answers p:first-child{\n font-size:22px;\n}\n.actions{\n display:flex;\n justify-content:flex-start;\n background-color:#e9d1a8;\n}\n.actions span{\n margin-right:12px;\n}'
         }],
         shareButton: false,
         console: false
